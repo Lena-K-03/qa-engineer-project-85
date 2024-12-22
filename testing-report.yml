@@ -128,6 +128,20 @@
   status: pass
 
 - summary: |
-    
+    Проверка сайта на кроссбраузерность
   status: pass
+
+
+- summary: |
+    Проверка адаптивности мобильной версии сайта 
+  status: pass
+
   
+- summary: |
+    Проверка записи решения и проигрывания записи
+  status: pass
+
+
+- summary: |
+    
+  status: fail
