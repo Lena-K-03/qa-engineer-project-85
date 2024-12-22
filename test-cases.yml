@@ -8,8 +8,8 @@
   test-data: |
     no data 
   steps:
-    - Нажимаем на кнопку Sign up
-    - Нажимаем на кнопку Submit
+    - Нажать на кнопку Sign up
+    - Нажать на кнопку Submit
   expected-result: |
     При попытке регистрации без введения данных в поля формы, появляются  отметки внизу каждого поля об обязательном заполнении : 
     1. Nickname required
@@ -18,17 +18,17 @@
     4. Confirmation required
 
 - summary: |
-   Успешная проверка поля ввода электронной почты пользователя
+   Успешная проверка поля ввода Email пользователя
   requirement: |
-     При вводе в поле электрнной почты правильного формата, поле успешно проходит валидацию 
+     При вводе в поле Email  правильного формата, поле успешно проходит валидацию 
   prerequisites:
     Открыта форма регистрации
   test-data: |
-   Электронная почта = kirinaelena03@gmail.com
+   Email = kirinaelena03@gmail.com
   steps:
-    - Вводим электронную почту
+    - Ввести Email
   expected-result: |
-     При вводе электронной почты, поле успешно проходит валидацию 
+     При вводе Email, поле успешно проходит валидацию 
 
 - summary: |
    Успешная проверка поля Nickname пользователя 
@@ -39,7 +39,7 @@
   test-data: |
     Nickname = lenok
   steps:
-    - Вводим Nickname
+    - Ввести Nickname
   expected-result: |
      При вводе Nickname, поле успешно проходит валидацию 
 
@@ -52,7 +52,7 @@
   test-data: |
     Password  = 123456
   steps:
-    - Вводим Password
+    - Ввести Password
   expected-result: |
      При вводе Password, поле успешно проходит валидацию 
 
@@ -66,9 +66,67 @@
     Password  = 123456
     Password Confirmation  = 123456
   steps:
-    - Вводим Password
-    - Вводим Password Confirmation 
+    - Ввести Password
+    - Ввести Password Confirmation 
   expected-result: |
      При вводе в поле Password Confirmation значения идентичного значению, введенному в поле Password, поле успешно проходит валидацию 
+
+- summary: |
+   Успешная проверка регистрации пользователя
+  requirement: |
+    При вводе в поля формы регистрации корректных значений - Email, Nickname, Password, Password Confirmation, в таком случае регистрация пользователя проходит успешно
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Email = kirinaelena03@gmail.com
+    Nickname = lenok
+    Password  = 123456
+    Password Confirmation  = 123456
+  steps:
+    - Ввести Email
+    - Ввести Nickname
+    - Ввести Password
+    - Ввести Password Confirmation 
+  expected-result: |
+       При вводе в поля формы регистрации - Email, Nickname, Password, Password Confirmation, регистрация пользователя проходит успешно
+     
+- summary: |
+   Проверка поля ввода Email пользователя с неккоректным значением
+  requirement: |
+     При вводе в поле некорректного Email, поле не проходит валидацию
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+   Email = @gmail.com
+  steps:
+    - Ввести Email
+  expected-result: |
+     При вводе Email, поле не проходит валидацию. Появляется сообщение Invalid email внизу поля
+
+- summary: |
+   Проверка поля Nickname пользователя с неккоректным значением, в котором символов менее 3
+  requirement: |
+    При вводе в поле неккоректного значения Nickname,в котором символов менее 3, поле не проходит валидацию 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Nickname = le
+  steps:
+    - Ввести Nickname
+  expected-result: |
+     При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should be from 3 to 16 characters внизу поля
+
+- summary: |
+   Проверка поля Nickname пользователя с неккоректным значением, в котором символов более 16
+  requirement: |
+    При вводе в поле неккоректного значения Nickname, в котором символов более 16, поле не проходит валидацию 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Nickname = lenaaaaaaaaaaaaaaaa
+  steps:
+    - Ввести Nickname
+  expected-result: |
+     При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should be from 3 to 16 characters внизу поля
 
      
