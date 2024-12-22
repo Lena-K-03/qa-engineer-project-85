@@ -83,8 +83,8 @@
     Password  = 123456
     Password Confirmation  = 123456
   steps:
-    - Ввести Email
     - Ввести Nickname
+    - Ввести Email
     - Ввести Password
     - Ввести Password Confirmation
     - Нажать Submit
@@ -169,7 +169,27 @@
     - Ввести Password
     - Ввести Password Confirmation
   expected-result: |
-     При вводе Password Confirmation, поле не проходит валидацию. Появляется сообщение Passwords must match внизу поля  
+     При вводе Password Confirmation, поле не проходит валидацию. Появляется сообщение Passwords must match внизу поля 
+
+- summary: |
+   Проверка повторной регистрации пользователя
+  requirement: |
+    При вводе в поля формы регистрации уже зарегистрированных значений - Email, Nickname, Password, Password Confirmation, регистрация пользователя не проходит 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Email = kirina03@gmail.com
+    Nickname = lenok_1
+    Password  = 123456
+    Password Confirmation  = 123456
+  steps:
+    - Ввести Nickname
+    - Ввести Email
+    - Ввести Password
+    - Ввести Password Confirmation
+    - Нажать Submit
+  expected-result: |
+       При вводе в поля формы регистрации - Email, Nickname, Password, Password Confirmation, регистрация пользователя не проходит. Внизу поля Nickname появляется сообщение Nickname is already taken
 
 
      
