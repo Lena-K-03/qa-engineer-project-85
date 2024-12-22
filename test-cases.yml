@@ -37,7 +37,7 @@
   prerequisites:
     Открыта форма регистрации
   test-data: |
-    Nickname = lenok
+    Nickname = lenok_1
   steps:
     - Ввести Nickname
   expected-result: |
@@ -79,7 +79,7 @@
     Открыта форма регистрации
   test-data: |
     Email = kirinaelena03@gmail.com
-    Nickname = lenok
+    Nickname = lenok_1
     Password  = 123456
     Password Confirmation  = 123456
   steps:
@@ -128,5 +128,58 @@
     - Ввести Nickname
   expected-result: |
      При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should be from 3 to 16 characters внизу поля
+     
+- summary: |
+   Проверка поля Nickname пользователя с неккоректным значением, в котором символов более 16
+  requirement: |
+    При вводе в поле неккоректного значения Nickname, в котором символов более 16, поле не проходит валидацию 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Nickname = lenaaaaaaaaaaaaaaaa
+  steps:
+    - Ввести Nickname
+  expected-result: |
+     При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should be from 3 to 16 characters внизу поля
+
+- summary: |
+   Проверка поля Nickname пользователя с неккоректным значением, которое начинается не с латинской буквы
+  requirement: |
+    При вводе в поле неккоректного значения Nickname, которое начинается не с латинской буквы, поле не проходит валидацию 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Nickname = 1lena
+  steps:
+    - Ввести Nickname
+  expected-result: |
+     При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should contain Latin letters, numbers and underscores. Only begin with latin letter внизу поля 
+
+- summary: |
+   Проверка поля Password пользователя с неккоректным значением, в котором символов более 16
+  requirement: |
+    При вводе в поле неккоректного значения Password, в котором символов более 16, поле не проходит валидацию 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Password = lenaaaaaaaaaaaaaaaa
+  steps:
+    - Ввести Password
+  expected-result: |
+     При вводе Password , поле не проходит валидацию. Появляется сообщение Should be from 6 to 16 characters внизу поля
+
+- summary: |
+   Проверка поля Password пользователя с неккоректным значением, в котором символов менее 6
+  requirement: |
+    При вводе в поле неккоректного значения Password, в котором символов менее 6, поле не проходит валидацию 
+  prerequisites:
+    Открыта форма регистрации
+  test-data: |
+    Password = lenaa
+  steps:
+    - Ввести Password
+  expected-result: |
+     При вводе Password , поле не проходит валидацию. Появляется сообщение Should be from 6 to 16 characters внизу поля  
+
 
      
