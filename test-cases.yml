@@ -24,7 +24,7 @@
   prerequisites:
     Открыта форма регистрации
   test-data: |
-   Email = kirinaelena03@gmail.com
+   Email = kirina03@gmail.com
   steps:
     - Ввести Email
   expected-result: |
@@ -78,7 +78,7 @@
   prerequisites:
     Открыта форма регистрации
   test-data: |
-    Email = kirinaelena03@gmail.com
+    Email = kirina03@gmail.com
     Nickname = lenok_1
     Password  = 123456
     Password Confirmation  = 123456
@@ -86,9 +86,10 @@
     - Ввести Email
     - Ввести Nickname
     - Ввести Password
-    - Ввести Password Confirmation 
+    - Ввести Password Confirmation
+    - Нажать Submit
   expected-result: |
-       При вводе в поля формы регистрации - Email, Nickname, Password, Password Confirmation, регистрация пользователя проходит успешно
+       При вводе в поля формы регистрации - Email, Nickname, Password, Password Confirmation, регистрация пользователя проходит успешно. Выполняется вход на сайт
      
 - summary: |
    Проверка поля ввода Email пользователя с неккоректным значением
@@ -169,17 +170,19 @@
      При вводе Password , поле не проходит валидацию. Появляется сообщение Should be from 6 to 16 characters внизу поля
 
 - summary: |
-   Проверка поля Password пользователя с неккоректным значением, в котором символов менее 6
+   Проверка поля Password Confirmation пользователя с неккоректным значением
   requirement: |
-    При вводе в поле неккоректного значения Password, в котором символов менее 6, поле не проходит валидацию 
+    При вводе в поле неккоректного значения Password Confirmation, поле не проходит валидацию 
   prerequisites:
     Открыта форма регистрации
   test-data: |
-    Password = lenaa
+    Password = 123456
+    Password Confirmation = 1234567
   steps:
     - Ввести Password
+    - Ввести Password Confirmation
   expected-result: |
-     При вводе Password , поле не проходит валидацию. Появляется сообщение Should be from 6 to 16 characters внизу поля  
+     При вводе Password Confirmation, поле не проходит валидацию. Появляется сообщение Passwords must match внизу поля  
 
 
      
