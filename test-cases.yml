@@ -129,19 +129,6 @@
     - Ввести Nickname
   expected-result: |
      При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should be from 3 to 16 characters внизу поля
-     
-- summary: |
-   Проверка поля Nickname пользователя с неккоректным значением, в котором символов более 16
-  requirement: |
-    При вводе в поле неккоректного значения Nickname, в котором символов более 16, поле не проходит валидацию 
-  prerequisites:
-    Открыта форма регистрации
-  test-data: |
-    Nickname = lenaaaaaaaaaaaaaaaa
-  steps:
-    - Ввести Nickname
-  expected-result: |
-     При вводе Nickname, поле не проходит валидацию. Появляется сообщение Should be from 3 to 16 characters внизу поля
 
 - summary: |
    Проверка поля Nickname пользователя с неккоректным значением, которое начинается не с латинской буквы
