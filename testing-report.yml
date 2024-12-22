@@ -138,7 +138,3 @@
 - summary: |
     Проверка записи решения и проигрывания записи
   status: pass
-
-- summary: |
-    
-  status: fail
