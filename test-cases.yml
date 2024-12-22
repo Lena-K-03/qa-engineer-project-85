@@ -189,7 +189,28 @@
     - Ввести Password Confirmation
     - Нажать Submit
   expected-result: |
-       При вводе в поля формы регистрации - Email, Nickname, Password, Password Confirmation, регистрация пользователя не проходит. Внизу поля Nickname появляется сообщение Nickname is already taken
+       При вводе в поля формы регистрации - Email, Nickname, Password, Password Confirmation, регистрация пользователя не проходит. Внизу поля Nickname появляется сообщение Nickname is taken already
+
+- summary: |
+   Успешная проверка авторизации пользователя
+  requirement: |
+    При вводе в поля формы авторизации корректных значений - Email, Password; авторизация пользователя проходит успешно
+  prerequisites:
+    Открыта форма авторизации
+  test-data: |
+    Email = kirina03@gmail.com
+    Password  = 123456
+  steps:
+    - Ввести Email
+    - Ввести Password
+    - Нажать Submit
+  expected-result: |
+       1. При вводе в поля формы авторизации - Email, Password;  авторизация пользователя проходит успешно. Выполняется вход на сайт
+       2. Пользователь видит в правом углу свой никнейм 
+
+
+
+   
 
 
      
