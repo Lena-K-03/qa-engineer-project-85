@@ -48,6 +48,46 @@
   status: pass
 
 - summary: |
+    Проверка повторной регистрации пользователя
+  status: pass
+
+- summary: |
+    Успешная проверка авторизации пользователя
+  status: pass
+
+- summary: |
+    Проверка авторизации пользователя c неверным Email
+  status: pass
+  
+- summary: |
+    Проверка авторизации пользователя c неверным паролем
+  status: pass
+
+- summary: |
+    Проверка кнопки Sign in
+  status: pass
+
+- summary: |
+    Проверка кнопки Sign up
+  status: pass
+
+- summary: |
+    Проверка восстановления пароля пользователя
+  status: pass
+
+- summary: |
+    Проверка выхода пользователя из учетной записи
+  status: pass
+
+- summary: |
+    Проверка создания пробной игры без регистрации 
+  status: pass
+
+- summary: |
+    
+  status: pass
+
+- summary: |
     
   status: pass
 
