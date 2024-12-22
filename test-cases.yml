@@ -28,7 +28,7 @@
   steps:
     - Ввести Email
   expected-result: |
-     При вводе Email, поле успешно проходит валидацию 
+    При вводе Email, поле успешно проходит валидацию 
 
 - summary: |
    Успешная проверка поля Nickname пользователя 
@@ -208,9 +208,77 @@
        1. При вводе в поля формы авторизации - Email, Password;  авторизация пользователя проходит успешно. Выполняется вход на сайт
        2. Пользователь видит в правом углу свой никнейм 
 
+- summary: |
+   Проверка авторизации пользователя c неверным Email
+  requirement: |
+    При вводе в поле Email неверной электронной почты, авторизация пользователя не проходит
+  prerequisites:
+    Открыта форма авторизации
+  test-data: |
+    Email = kirina1@gmail.com
+    Password  = 123456
+  steps:
+    - Ввести Email
+    - Ввести Password
+    - Нажать Submit
+  expected-result: |
+       При вводе в поля формы авторизации - Email, Password;  авторизация пользователя не проходит успешно. В форме авторзации появляется сообщение EMAIL_NOT_FOUND
+    
+- summary: |
+   Проверка авторизации пользователя c неверным паролем
+  requirement: |
+    При вводе в поле Password неверного значения, авторизация пользователя не проходит
+  prerequisites:
+    Открыта форма авторизации
+  test-data: |
+    Email = kirina03@gmail.com
+    Password  = 1234567
+  steps:
+    - Ввести Email
+    - Ввести Password
+    - Нажать Submit
+  expected-result: |
+       При вводе в поля формы авторизации - Email, Password;  авторизация пользователя не проходит успешно. В форме авторзации появляется сообщение INVALID_PASSWORD
 
+- summary: |
+   Проверка кнопки Sign in
+  requirement: |
+    При нажатии на кнопку Sign in пользователь переходит на страницу авторизации
+  prerequisites:
+    Открыта главная страница сайта
+  test-data: |
+    no data
+  steps:
+    - Нажать на Sign in
+  expected-result: |
+       При нажатии на кнопку Sign in пользватель переходит на страницу авторизации
 
-   
+- summary: |
+   Проверка кнопки Sign up
+  requirement: |
+    При нажатии на кнопку Sign up пользователь переходит на страницу регистрации
+  prerequisites:
+    Открыта главная страница сайта
+  test-data: |
+    no data
+  steps:
+    - Нажать на Sign up
+  expected-result: |
+      При нажатии на кнопку Sign up пользватель переходит на страницу регистрации
+
+- summary: |
+   Проверка восстановления пароля пользователя
+  requirement: |
+    Пользователь должен иметь возможность восстановить пароль
+  prerequisites:
+    Открыта форма авторизации
+  test-data: |
+    Email = kirina03@gmail.com
+  steps:
+    - Нажать на Forgot your password?
+    - Ввести Email
+  expected-result: |
+     Появляется сообщение We have sent you an email with instructions on how to reset your password
 
 
      
