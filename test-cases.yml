@@ -78,6 +78,7 @@
   prerequisites:
     Открыта форма регистрации
   test-data: |
+    Вводим каждую проверку новый Email и Nickname, например:
     Email = kirina03@gmail.com
     Nickname = lenok_1
     Password  = 123456
