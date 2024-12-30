@@ -316,10 +316,13 @@
     Nickname = lenok_1
   steps:
     - Нажать на Сreate Game
+    - Выбрать любой уровень сложности, например 3 звезды (medium)
     - Выбрать With a bot
+    - Установить любой таймер на ползунке Time control, например 8 минут
+    - Выбрать любой вид задачи в поле Choose task by name or tags, например random task
     - Нажать на Create battle
   expected-result: |
-      Появляется страница игры с ботом на время
+      Появляется страница игры с ботом на время 
 
 - summary: |
    Проверка выбора уровня сложности при создании игры 
@@ -333,6 +336,8 @@
     - Нажать на Сreate Game
     - Выбрать 3 звезды (medium)
     - Выбрать With a bot
+    - Установить любой таймер на ползунке Time control, например 8 минут
+    - Выбрать любой вид задачи в поле Choose task by name or tags, например random task
     - Нажать на Create battle
   expected-result: |
       Появляется страница игры с ботом на время c уровнем сложности medium
@@ -347,7 +352,9 @@
     Nickname = lenok_1
   steps:
     - Нажать на Сreate Game
+    - Выбрать любой уровень сложности, например 3 звезды (medium)
     - Выбрать With a bot
+    - Установить любой таймер на ползунке Time control, например 8 минут
     - В поле Choose task by name or tags выбрать любую задачу, например - add_two_number
     - Нажать на Create battle
   expected-result: |
