@@ -276,8 +276,11 @@
   steps:
     - Нажать на Forgot your password?
     - Ввести Email
+    - Нажать на кнопку Submit. Появляется сообщение We have sent you an email with instructions on how to reset your password
+    - Зайти на указанную почту
+    - Открыть письмо с инструкциями от сайта
   expected-result: |
-     Появляется сообщение We have sent you an email with instructions on how to reset your password
+     Пользователь должен получить на указанную почту письмо с инструкцией по восстановлению пароля
 
 - summary: |
    Проверка выхода пользователя из учетной записи
@@ -395,6 +398,8 @@
   test-data: |
     Nickname = lenok_1
   steps:
+    - В поле редактора кода ввести решение задачи (код)
+    - Нажать на кнопку Run
     - Нажать на кнопку Output
   expected-result: |
        Пользователь видит вывод тестов в созданной задаче
